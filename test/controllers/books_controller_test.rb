@@ -3,6 +3,7 @@ require 'test_helper'
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @book = books(:one)
+    @publisher_type = 'PublishingHouse'
   end
 
   test "should get index" do
@@ -12,7 +13,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create book" do
     assert_difference('Book.count') do
-      post books_url, params: { book: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @book.publisher_type, title: @book.title } }, as: :json
+      post books_url, params: { data: { attributes: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @publisher_type, title: @book.title } } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +25,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update book" do
-    patch book_url(@book), params: { book: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @book.publisher_type, title: @book.title } }, as: :json
+    patch book_url(@book), params: { data: { attributes: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @publisher_type, title: @book.title } } }, as: :json
     assert_response 200
   end
 
