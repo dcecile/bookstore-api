@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthorsController < ApplicationController
-  before_action :set_author, only: %i[show update destroy]
+  before_action :set_author, only: %i[show]
 
   # GET /authors/1
   def show

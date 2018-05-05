@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PublishingHousesController < ApplicationController
-  before_action :set_publishing_house, only: %i[show update destroy]
+  before_action :set_publishing_house, only: []
 
   private
 
