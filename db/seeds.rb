@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 pub1 = PublishingHouse.create(name: "ABC Publisher", discount: 40)
 pub2 = PublishingHouse.create(name: "Acme Publishing House", discount: 50)
 pub3 = PublishingHouse.create(name: "Foobar Corporation", discount: 55)
